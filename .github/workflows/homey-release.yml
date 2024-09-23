@@ -25,13 +25,10 @@ jobs:
           tagging_message: v${{ steps.update_version.outputs.version }}
 
       - name: Create environment file
-        env:
-          json: ${{ secrets.HOMEY_ENV_JSON }}
-        if: "${{ env.json != '' }}"
         uses: jsdaniell/create-json@v1.2.3
         with:
           name: env.json
-          json: ${{ env.json }}
+          json: ${{ secrets.HOMEY_ENV_JSON }}
 
       - name: Publish
         uses: athombv/github-action-homey-app-publish@master
