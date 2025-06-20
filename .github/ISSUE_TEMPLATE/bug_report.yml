@@ -1,4 +1,4 @@
-name: 🐛Bug Report
+name: 🐛 Bug Report
 description: File a bug report here
 title: "[BUG]: "
 labels: ["bug"]
@@ -10,26 +10,64 @@ body:
         Thanks for taking the time to fill out this bug report 🤗
         Make sure there aren't any open/closed issues for this topic 😃
 
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      description: |
+        Which version of the app you are using?
+        You can find this in the Homey app under 'More' -> 'Apps' -> App.
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: homey-model
+    attributes:
+      label: Homey model
+      description: What Homey model are you using?
+      options:
+        - Homey Pro (Early 2023)
+        - Homey Pro (2016 — 2019)
+        - Homey Pro mini
+        - Homey Bridge
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: homey-version
+    attributes:
+      label: Homey version
+      description: |
+        Which version of Homey you are using?
+        You can find this in the Homey app under 'More' -> 'Settings' -> 'General'.
+      placeholder: 12.4.9
+    validations:
+      required: true
+
   - type: textarea
     id: bug-description
     attributes:
       label: Description of the bug
-      description: Give me a brief description of what happened and what should have happened
+      description: Give me a brief description of what happened and what should have happened.
     validations:
       required: true
 
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps To Reproduce
+      label: Steps to reproduce
       description: Steps to reproduce the behavior.
       placeholder: |
         1. Go to '...'
-        2. Create flow with cards '...'
-        3. Run flow with '...'
-        4. See error
+        2. Create flow '...'
+        3. Add cards(s) '...'
+        4. Run flow (with) '...'
+        5. See error
     validations:
       required: true
+
   - type: textarea
     id: additional-information
     attributes:
