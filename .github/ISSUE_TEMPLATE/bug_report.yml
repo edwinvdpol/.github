@@ -2,21 +2,17 @@ name: 🐛 Bug Report
 description: File a bug report here
 title: "[BUG]: "
 labels: ["bug"]
-assignees: ["edwinvdpol"]
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report 🤗
         Make sure there aren't any open/closed issues for this topic 😃
-
   - type: input
     id: app-version
     attributes:
       label: App version
-      description: |
-        Which version of the app you are using?
-        You can find this in the Homey app under 'More' -> 'Apps' -> App.
+      description: You can find this in the Homey app under 'More' -> 'Apps' -> <App>.
       placeholder: 1.0.0
     validations:
       required: true
@@ -25,13 +21,12 @@ body:
     id: homey-model
     attributes:
       label: Homey model
-      description: What Homey model are you using?
+      description: You can find this in the Homey app under 'More' -> 'Settings' -> 'General'.
       options:
         - Homey Pro (Early 2023)
         - Homey Pro (2016 — 2019)
         - Homey Pro mini
         - Homey Bridge
-      default: 0
     validations:
       required: true
 
@@ -39,9 +34,7 @@ body:
     id: homey-version
     attributes:
       label: Homey version
-      description: |
-        Which version of Homey you are using?
-        You can find this in the Homey app under 'More' -> 'Settings' -> 'General'.
+      description: You can find this in the Homey app under 'More' -> 'Settings' -> 'General'.
       placeholder: 12.4.9
     validations:
       required: true
@@ -72,5 +65,4 @@ body:
     id: additional-information
     attributes:
       label: Additional Information
-      description: |
-        Provide any additional information such as logs, screenshots, likes, scenarios in which the bug occurs so that it facilitates resolving the issue.
+      description: Provide any additional information such as logs, screenshots, likes, scenarios in which the bug occurs so that it facilitates resolving the issue.
