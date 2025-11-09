@@ -11,6 +11,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Ensure git is installed
+        run: sudo apt-get update && sudo apt-get install -y git
+
       - uses: athombv/github-action-homey-app-validate@master
         with:
           level: verified
