@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Update version
         uses: athombv/github-action-homey-app-version@master
@@ -19,7 +19,7 @@ jobs:
           changelog: ${{ inputs.changelog }}
 
       - name: Commit version
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Version ${{ steps.update_version.outputs.version }}
           tagging_message: v${{ steps.update_version.outputs.version }}
